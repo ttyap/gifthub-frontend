@@ -1,11 +1,24 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./App.css";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <div className="container w-full">
-        <h1 className="text-xl font-serif text-center">GiftHub</h1>
-      </div>
+    <div className="flex flex-col justify-between h-full">
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/offers" />
+          <Route path="/requests" />
+          <Route path="/signin" />
+          <Route path="/signup" />
+          <Route path="/" />
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }
